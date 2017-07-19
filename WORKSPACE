@@ -69,8 +69,8 @@ go_repository(
 
 git_repository(
     name = "io_bazel_rules_docker",
-    remote = "https://github.com/bazelbuild/rules_docker.git",
-    commit = "79aa5de0eb7348876316c537f7cec26bae02cfab",
+    remote = "https://github.com/mattmoor/rules_docker.git",
+    commit = "5ee8f1b66309d6c59762900cf0b8b1b88224ecaf",
 )
 
 load(
@@ -86,3 +86,15 @@ docker_pull(
     repository = "distroless/base",
     digest = "sha256:06fcd3edcfeefe13b82fa8bdb9e3f4fa3bf4c7e8fe997bee0230e392f77d0e04",
 )
+
+git_repository(
+    name = "io_bazel_rules_k8s",
+    remote = "https://github.com/mattmoor/rules_k8s.git",
+    commit = "a3e68dae77514bb96347bfd002560639c10f547e",
+)
+
+load(
+  "@io_bazel_rules_k8s//k8s:k8s.bzl",
+  "k8s_repositories",
+)
+k8s_repositories()

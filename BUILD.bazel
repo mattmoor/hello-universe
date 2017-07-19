@@ -33,6 +33,7 @@ docker_build(
     base = "@base//image",
     files = [":hello-universe"],
     entrypoint = ["/hello-universe"],
+    visibility = ["//visibility:public"],
 )
 
 # I publish the docker image to the specified registry,
